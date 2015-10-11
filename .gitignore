@@ -1,0 +1,76 @@
+<?php
+
+
+
+
+
+$pole = [
+[
+  'artist'=>'Milan',
+  'name'=>'Blbec'  
+],
+[
+  'artist'=>'Jirka',
+  'name'=>'Blbec1'  
+],
+
+[
+  'artist'=>'Pepa',
+  'name'=>'Blbec2'  
+],
+
+[
+  'artist'=>'Milada',
+  'name'=>'Blbec3'  
+],
+
+[
+  'artist'=>'Josef',
+  'name'=>'Blbec4'  
+],
+
+[
+  'artist'=>'Mimon',
+  'name'=>'Blbec5'  
+],
+
+];
+
+sort($pole);
+
+//string json_encode ( mixed $pole [, int $options = 0 [, int $depth = 512 ]] );
+$json = json_encode($pole);
+$myfile = fopen($argv[1] . ".json", "w");
+fwrite($myfile, $json);
+fclose($myfile);
+
+
+/* TRY TO CONVERT TO XML
+function array_to_xml($array,$xml) {
+
+    foreach($array as $key => $value) {
+      if(is_array($value)){
+           $xml->addChild("$key");
+          
+      
+      }
+	 
+  	$xml->addChild($key,$value);
+  }
+  
+}
+
+$xml = new SimpleXMLElement("");
+array_to_xml($pole,$xml);
+print $xml->asXML();
+
+$myfile1 = fopen("xml.xml", "w");
+fwrite($myfile1, $result);
+fclose($myfile1);
+
+
+
+*/
+?> 
+
+
